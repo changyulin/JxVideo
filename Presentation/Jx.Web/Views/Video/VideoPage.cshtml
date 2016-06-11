@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剑学在线视频</title>
+    @Styles.Render("~/Content/flowplayer/skin/functional.css")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Content/flowplayer/flowplayer.min.js")
+</head>
+<body>
+    <!-- the player -->
+    @{
+        string vedioSrc = "";
+        if (ViewData["name"]!=null) { vedioSrc = "http://111.75.208.23:8090/Video/" + ViewData["name"] + ".mp4"; }
+    }
+    <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="0.618">
+        <video>
+            <source type="video/mp4" src=@vedioSrc>
+        </video>
+    </div>
+</body>
+</html>
