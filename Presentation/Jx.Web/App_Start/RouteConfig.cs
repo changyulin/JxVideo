@@ -15,14 +15,14 @@ namespace Jx.Web
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{name}",
-                defaults: new { controller = "Video", action = "VideoPage", name = UrlParameter.Optional }
+                url: "{action}",
+                defaults: new { controller = "Video", action = "VideoPage", name = "自动化测试介绍" }
             );
 
             routes.MapRoute(
-                name: "VideoSource",
-                url: "VideoSource/{category}/{name}",
-                defaults: new { controller = "Video", action = "VideoPage" }
+                name: "Video",
+                url: "{controller}/{name}",
+                defaults: new { controller = "Video", action = "VideoPage", name = "自动化测试介绍" }
             );
         }
     }
