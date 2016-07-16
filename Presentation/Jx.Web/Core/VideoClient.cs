@@ -12,7 +12,7 @@ namespace Jx.Web.Core
         private bool completeLoad = false;
         private DateTime updateTime = DateTime.Now;
         private List<string> videoRequest = new List<string>();
-        private int validTimeTicks = 5 * 60 * 1000;
+        private int validTimeSeconds = 5 * 60;
         private string browser;
         private string ip;
 
@@ -60,8 +60,8 @@ namespace Jx.Web.Core
         {
             if (beginLoad)
             {
-                TimeSpan timeSpan = this.updateTime - DateTime.Now;
-                if (timeSpan.Ticks > validTimeTicks)
+                TimeSpan timeSpan = DateTime.Now - this.updateTime;
+                if (timeSpan.Seconds > validTimeSeconds)
                 {
                     completeLoad = true;
                 }
@@ -77,7 +77,7 @@ namespace Jx.Web.Core
             }
             else if (browser == "firefox")
             {
-                return videoRequest.Count < 2;
+                return videoRequest.Count < 20;
             }
             else
             {

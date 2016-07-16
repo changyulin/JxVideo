@@ -55,18 +55,34 @@
 
 
 
-window.setInterval(function () { checkLoadingStatus() }, 3000);
+window.setInterval(function () { checkLoadingStatus() }, 5000);
 
 function checkLoadingStatus() {
     if (client.getTotalTime() == '')
-        client.setTotalTime($('video').get(0).seekable.end(0));
-    var bufferedTimeTemp = $("video").get(0).buffered.end(0);
+        client.setTotalTime(getTotalTime());
+    var bufferedTimeTemp = getBufferedTime();
     if (client.getBufferedTime() != '' && client.getBufferedTime() != bufferedTimeTemp) {
         client.sentLoadingStatus();
     }
     client.setBufferedTime(bufferedTimeTemp);
     if (client.getBufferedTime() == client.getTotalTime())
         client.sendLoadCompletedStatus()
+}
+
+function getTotalTime() {
+    try {
+        return $('video').get(0).seekable.end(0);
+    } catch (e) {
+        return '';
+    }
+}
+
+function getBufferedTime() {
+    try {
+        return $('video').get(0).buffered.end(0);
+    } catch (e) {
+        return '';
+    }
 }
 
 
