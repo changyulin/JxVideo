@@ -32,7 +32,7 @@ namespace Jx.Web.Controllers
             else
             {
                 this.ViewData["token"] = token;
-                this.ViewData["name"] = name;
+                this.ViewData["name"] = name.Replace("_", "/");
                 return View();
             }
         }
