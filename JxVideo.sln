@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{8CB2BDBA-B0C7-4F61-B968-A97054944F72}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Services", "Libraries\Jx.Services\Jx.Services.csproj", "{5DE56996-C56C-4B5D-92E0-009A3EF9877A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Web", "Presentation\Jx.Web\Jx.Web.csproj", "{C46D186C-CC93-4FE5-BB0F-CCE37DD0741F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Web.Framework", "Presentation\Jx.Web.Framework\Jx.Web.Framework.csproj", "{32E776F1-1669-43DE-9669-2DA8CAA176F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{C46D186C-CC93-4FE5-BB0F-CCE37DD0741F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46D186C-CC93-4FE5-BB0F-CCE37DD0741F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46D186C-CC93-4FE5-BB0F-CCE37DD0741F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E776F1-1669-43DE-9669-2DA8CAA176F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E776F1-1669-43DE-9669-2DA8CAA176F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E776F1-1669-43DE-9669-2DA8CAA176F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E776F1-1669-43DE-9669-2DA8CAA176F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{A696122B-8EED-4225-9BA6-BC15382F32F0} = {8CB2BDBA-B0C7-4F61-B968-A97054944F72}
 		{5DE56996-C56C-4B5D-92E0-009A3EF9877A} = {8CB2BDBA-B0C7-4F61-B968-A97054944F72}
 		{C46D186C-CC93-4FE5-BB0F-CCE37DD0741F} = {FF4F27C2-518B-487F-97E1-DADA9550F283}
+		{32E776F1-1669-43DE-9669-2DA8CAA176F9} = {FF4F27C2-518B-487F-97E1-DADA9550F283}
 	EndGlobalSection
 EndGlobal

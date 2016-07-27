@@ -30,8 +30,67 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ImageResizer.4.0.5\lib\net45\ImageResizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaxMind.Db, Version=2.0.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaxMind.Db.2.0.0\lib\net45\MaxMind.Db.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaxMind.GeoIP2, Version=2.6.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaxMind.GeoIP2.2.6.0\lib\net45\MaxMind.GeoIP2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WindowsAzure.Storage.7.1.2\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +98,373 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Affiliates\AffiliateExtensions.cs" />
+    <Compile Include="Affiliates\AffiliateService.cs" />
+    <Compile Include="Affiliates\IAffiliateService.cs" />
+    <Compile Include="Authentication\External\AuthorizationResult.cs" />
+    <Compile Include="Authentication\External\AuthorizeState.cs" />
+    <Compile Include="Authentication\External\ExternalAuthorizer.cs" />
+    <Compile Include="Authentication\External\ExternalAuthorizerHelper.cs" />
+    <Compile Include="Authentication\External\IClaimsTranslator.cs" />
+    <Compile Include="Authentication\External\IExternalAuthenticationMethod.cs" />
+    <Compile Include="Authentication\External\IExternalAuthorizer.cs" />
+    <Compile Include="Authentication\External\IExternalProviderAuthorizer.cs" />
+    <Compile Include="Authentication\External\IOpenAuthenticationService.cs" />
+    <Compile Include="Authentication\External\OpenAuthenticationParameters.cs" />
+    <Compile Include="Authentication\External\OpenAuthenticationService.cs" />
+    <Compile Include="Authentication\External\OpenAuthenticationStatus.cs" />
+    <Compile Include="Authentication\External\OpenAuthentificationExtensions.cs" />
+    <Compile Include="Authentication\External\RegistrationDetails.cs" />
+    <Compile Include="Authentication\External\UserClaims.cs" />
+    <Compile Include="Authentication\FormsAuthenticationService.cs" />
+    <Compile Include="Authentication\IAuthenticationService.cs" />
+    <Compile Include="Blogs\BlogExtensions.cs" />
+    <Compile Include="Blogs\BlogService.cs" />
+    <Compile Include="Blogs\IBlogService.cs" />
+    <Compile Include="Caching\ClearCacheTask.cs" />
+    <Compile Include="Catalog\BackInStockSubscriptionService.cs" />
+    <Compile Include="Catalog\Cache\PriceCacheEventConsumer.cs" />
+    <Compile Include="Catalog\CategoryExtensions.cs" />
+    <Compile Include="Catalog\CategoryService.cs" />
+    <Compile Include="Catalog\CategoryTemplateService.cs" />
+    <Compile Include="Catalog\CompareProductsService.cs" />
+    <Compile Include="Catalog\CopyProductService.cs" />
+    <Compile Include="Catalog\IBackInStockSubscriptionService.cs" />
+    <Compile Include="Catalog\ICategoryService.cs" />
+    <Compile Include="Catalog\ICategoryTemplateService.cs" />
+    <Compile Include="Catalog\ICompareProductsService.cs" />
+    <Compile Include="Catalog\ICopyProductService.cs" />
+    <Compile Include="Catalog\IManufacturerService.cs" />
+    <Compile Include="Catalog\IManufacturerTemplateService.cs" />
+    <Compile Include="Catalog\IPriceCalculationService.cs" />
+    <Compile Include="Catalog\IPriceFormatter.cs" />
+    <Compile Include="Catalog\IProductAttributeFormatter.cs" />
+    <Compile Include="Catalog\IProductAttributeParser.cs" />
+    <Compile Include="Catalog\IProductAttributeService.cs" />
+    <Compile Include="Catalog\IProductService.cs" />
+    <Compile Include="Catalog\IProductTagService.cs" />
+    <Compile Include="Catalog\IProductTemplateService.cs" />
+    <Compile Include="Catalog\IRecentlyViewedProductsService.cs" />
+    <Compile Include="Catalog\ISpecificationAttributeService.cs" />
+    <Compile Include="Catalog\ManufacturerExtensions.cs" />
+    <Compile Include="Catalog\ManufacturerService.cs" />
+    <Compile Include="Catalog\ManufacturerTemplateService.cs" />
+    <Compile Include="Catalog\PriceCalculationService.cs" />
+    <Compile Include="Catalog\PriceFormatter.cs" />
+    <Compile Include="Catalog\ProductAttributeExtensions.cs" />
+    <Compile Include="Catalog\ProductAttributeFormatter.cs" />
+    <Compile Include="Catalog\ProductAttributeParser.cs" />
+    <Compile Include="Catalog\ProductAttributeService.cs" />
+    <Compile Include="Catalog\ProductExtensions.cs" />
+    <Compile Include="Catalog\ProductService.cs" />
+    <Compile Include="Catalog\ProductTagService.cs" />
+    <Compile Include="Catalog\ProductTemplateService.cs" />
+    <Compile Include="Catalog\RecentlyViewedProductsService.cs" />
+    <Compile Include="Catalog\RoundingHelper.cs" />
+    <Compile Include="Catalog\SpecificationAttributeService.cs" />
+    <Compile Include="Catalog\TierPriceExtensions.cs" />
+    <Compile Include="Cms\IWidgetPlugin.cs" />
+    <Compile Include="Cms\IWidgetService.cs" />
+    <Compile Include="Cms\WidgetExtensions.cs" />
+    <Compile Include="Cms\WidgetService.cs" />
+    <Compile Include="Common\AddressAttributeExtensions.cs" />
+    <Compile Include="Common\AddressAttributeFormatter.cs" />
+    <Compile Include="Common\AddressAttributeParser.cs" />
+    <Compile Include="Common\AddressAttributeService.cs" />
+    <Compile Include="Common\AddressExtensions.cs" />
+    <Compile Include="Common\AddressService.cs" />
+    <Compile Include="Common\FulltextService.cs" />
+    <Compile Include="Common\GenericAttributeExtensions.cs" />
+    <Compile Include="Common\GenericAttributeService.cs" />
+    <Compile Include="Common\IAddressAttributeFormatter.cs" />
+    <Compile Include="Common\IAddressAttributeParser.cs" />
+    <Compile Include="Common\IAddressAttributeService.cs" />
+    <Compile Include="Common\IAddressService.cs" />
+    <Compile Include="Common\IFulltextService.cs" />
+    <Compile Include="Common\IGenericAttributeService.cs" />
+    <Compile Include="Common\IMaintenanceService.cs" />
+    <Compile Include="Common\IMiscPlugin.cs" />
+    <Compile Include="Common\IPdfService.cs" />
+    <Compile Include="Common\ISearchTermService.cs" />
+    <Compile Include="Common\KeepAliveTask.cs" />
+    <Compile Include="Common\MaintenanceService.cs" />
+    <Compile Include="Common\PdfService.cs" />
+    <Compile Include="Common\SearchTermService.cs" />
+    <Compile Include="Configuration\ISettingService.cs" />
+    <Compile Include="Configuration\SettingExtensions.cs" />
+    <Compile Include="Configuration\SettingService.cs" />
+    <Compile Include="Customers\ChangePasswordRequest.cs" />
+    <Compile Include="Customers\ChangePasswordResult.cs" />
+    <Compile Include="Customers\CustomerAttributeExtensions.cs" />
+    <Compile Include="Customers\CustomerAttributeParser.cs" />
+    <Compile Include="Customers\CustomerAttributeService.cs" />
+    <Compile Include="Customers\CustomerExtensions.cs" />
+    <Compile Include="Customers\CustomerRegistrationRequest.cs" />
+    <Compile Include="Customers\CustomerRegistrationResult.cs" />
+    <Compile Include="Customers\CustomerRegistrationService.cs" />
+    <Compile Include="Customers\CustomerReportService.cs" />
+    <Compile Include="Customers\CustomerService.cs" />
+    <Compile Include="Customers\DeleteGuestsTask.cs" />
+    <Compile Include="Customers\ICustomerAttributeParser.cs" />
+    <Compile Include="Customers\ICustomerAttributeService.cs" />
+    <Compile Include="Customers\ICustomerRegistrationService.cs" />
+    <Compile Include="Customers\ICustomerReportService.cs" />
+    <Compile Include="Customers\ICustomerService.cs" />
+    <Compile Include="Customers\IJxCodeService.cs" />
+    <Compile Include="Customers\JxCodeService.cs" />
+    <Compile Include="Directory\CountryService.cs" />
+    <Compile Include="Directory\CurrencyService.cs" />
+    <Compile Include="Directory\GeoLookupService.cs" />
+    <Compile Include="Directory\ICountryService.cs" />
+    <Compile Include="Directory\ICurrencyService.cs" />
+    <Compile Include="Directory\IExchangeRateProvider.cs" />
+    <Compile Include="Directory\IGeoLookupService.cs" />
+    <Compile Include="Directory\IMeasureService.cs" />
+    <Compile Include="Directory\IStateProvinceService.cs" />
+    <Compile Include="Directory\MeasureService.cs" />
+    <Compile Include="Directory\StateProvinceService.cs" />
+    <Compile Include="Directory\UpdateExchangeRateTask.cs" />
+    <Compile Include="Discounts\Cache\DiscountRequirementEventConsumer.cs" />
+    <Compile Include="Discounts\DiscountExtensions.cs" />
+    <Compile Include="Discounts\DiscountRequirementValidationRequest.cs" />
+    <Compile Include="Discounts\DiscountRequirementValidationResult.cs" />
+    <Compile Include="Discounts\DiscountService.cs" />
+    <Compile Include="Discounts\DiscountValidationResult.cs" />
+    <Compile Include="Discounts\IDiscountRequirementRule.cs" />
+    <Compile Include="Discounts\IDiscountService.cs" />
+    <Compile Include="Events\EventPublisher.cs" />
+    <Compile Include="Events\EventPublisherExtensions.cs" />
+    <Compile Include="Events\IConsumer.cs" />
+    <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Events\ISubscriptionService.cs" />
+    <Compile Include="Events\SubscriptionService.cs" />
+    <Compile Include="ExportImport\ExportManager.cs" />
+    <Compile Include="ExportImport\IExportManager.cs" />
+    <Compile Include="ExportImport\IImportManager.cs" />
+    <Compile Include="ExportImport\ImportManager.cs" />
+    <Compile Include="Forums\ForumExtensions.cs" />
+    <Compile Include="Forums\ForumService.cs" />
+    <Compile Include="Forums\IForumService.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\DateTimeSettings.cs" />
+    <Compile Include="Helpers\IDateTimeHelper.cs" />
+    <Compile Include="Helpers\IUserAgentHelper.cs" />
+    <Compile Include="Helpers\UserAgentHelper.cs" />
+    <Compile Include="Infrastructure\AzureWebsitesMachineNameProvider.cs" />
+    <Compile Include="Infrastructure\DefaultMachineNameProvider.cs" />
+    <Compile Include="Infrastructure\IMachineNameProvider.cs" />
+    <Compile Include="Installation\CodeFirstInstallationService.cs" />
+    <Compile Include="Installation\IInstallationService.cs" />
+    <Compile Include="Installation\SqlFileInstallationService.cs" />
+    <Compile Include="Localization\ILanguageService.cs" />
+    <Compile Include="Localization\ILocalizationService.cs" />
+    <Compile Include="Localization\ILocalizedEntityService.cs" />
+    <Compile Include="Localization\LanguageService.cs" />
+    <Compile Include="Localization\LocalizationExtensions.cs" />
+    <Compile Include="Localization\LocalizationService.cs" />
+    <Compile Include="Localization\LocalizedEntityService.cs" />
+    <Compile Include="Logging\ClearLogTask.cs" />
+    <Compile Include="Logging\CustomerActivityService.cs" />
+    <Compile Include="Logging\DefaultLogger.cs" />
+    <Compile Include="Logging\ICustomerActivityService.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LoggingExtensions.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Media\AzurePictureService.cs" />
+    <Compile Include="Media\DownloadService.cs" />
+    <Compile Include="Media\Extensions.cs" />
+    <Compile Include="Media\IDownloadService.cs" />
+    <Compile Include="Media\IPictureService.cs" />
+    <Compile Include="Media\PictureService.cs" />
+    <Compile Include="Media\ResizeType.cs" />
+    <Compile Include="Messages\CampaignService.cs" />
+    <Compile Include="Messages\EmailAccountService.cs" />
+    <Compile Include="Messages\EmailSender.cs" />
+    <Compile Include="Messages\EventPublisherExtensions.cs" />
+    <Compile Include="Messages\ICampaignService.cs" />
+    <Compile Include="Messages\IEmailAccountService.cs" />
+    <Compile Include="Messages\IEmailSender.cs" />
+    <Compile Include="Messages\IMessageTemplateService.cs" />
+    <Compile Include="Messages\IMessageTokenProvider.cs" />
+    <Compile Include="Messages\INewsLetterSubscriptionService.cs" />
+    <Compile Include="Messages\IQueuedEmailService.cs" />
+    <Compile Include="Messages\ITokenizer.cs" />
+    <Compile Include="Messages\IWorkflowMessageService.cs" />
+    <Compile Include="Messages\MessageTemplateService.cs" />
+    <Compile Include="Messages\MessageTokenProvider.cs" />
+    <Compile Include="Messages\NewsLetterSubscriptionService.cs" />
+    <Compile Include="Messages\QueuedEmailService.cs" />
+    <Compile Include="Messages\QueuedMessagesSendTask.cs" />
+    <Compile Include="Messages\Token.cs" />
+    <Compile Include="Messages\Tokenizer.cs" />
+    <Compile Include="Messages\WorkflowMessageService.cs" />
+    <Compile Include="News\INewsService.cs" />
+    <Compile Include="News\NewsService.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Orders\AppliedGiftCard.cs" />
+    <Compile Include="Orders\CheckoutAttributeExtensions.cs" />
+    <Compile Include="Orders\CheckoutAttributeFormatter.cs" />
+    <Compile Include="Orders\CheckoutAttributeParser.cs" />
+    <Compile Include="Orders\CheckoutAttributeService.cs" />
+    <Compile Include="Orders\GiftCardService.cs" />
+    <Compile Include="Orders\ICheckoutAttributeFormatter.cs" />
+    <Compile Include="Orders\ICheckoutAttributeParser.cs" />
+    <Compile Include="Orders\ICheckoutAttributeService.cs" />
+    <Compile Include="Orders\IGiftCardService.cs" />
+    <Compile Include="Orders\IOrderProcessingService.cs" />
+    <Compile Include="Orders\IOrderReportService.cs" />
+    <Compile Include="Orders\IOrderService.cs" />
+    <Compile Include="Orders\IOrderTotalCalculationService.cs" />
+    <Compile Include="Orders\IReturnRequestService.cs" />
+    <Compile Include="Orders\IRewardPointService.cs" />
+    <Compile Include="Orders\IShoppingCartService.cs" />
+    <Compile Include="Orders\OrderExtensions.cs" />
+    <Compile Include="Orders\OrderProcessingService.cs" />
+    <Compile Include="Orders\OrderReportService.cs" />
+    <Compile Include="Orders\OrderService.cs" />
+    <Compile Include="Orders\OrderTotalCalculationService.cs" />
+    <Compile Include="Orders\PlaceOrderResult.cs" />
+    <Compile Include="Orders\ReturnRequestService.cs" />
+    <Compile Include="Orders\RewardPointService.cs" />
+    <Compile Include="Orders\ShoppingCartExtensions.cs" />
+    <Compile Include="Orders\ShoppingCartService.cs" />
+    <Compile Include="Payments\CancelRecurringPaymentRequest.cs" />
+    <Compile Include="Payments\CancelRecurringPaymentResult.cs" />
+    <Compile Include="Payments\CapturePaymentRequest.cs" />
+    <Compile Include="Payments\CapturePaymentResult.cs" />
+    <Compile Include="Payments\IPaymentMethod.cs" />
+    <Compile Include="Payments\IPaymentService.cs" />
+    <Compile Include="Payments\PaymentExtensions.cs" />
+    <Compile Include="Payments\PaymentMethodType.cs" />
+    <Compile Include="Payments\PaymentService.cs" />
+    <Compile Include="Payments\PostProcessPaymentRequest.cs" />
+    <Compile Include="Payments\ProcessPaymentRequest.cs" />
+    <Compile Include="Payments\ProcessPaymentResult.cs" />
+    <Compile Include="Payments\RecurringPaymentType.cs" />
+    <Compile Include="Payments\RefundPaymentRequest.cs" />
+    <Compile Include="Payments\RefundPaymentResult.cs" />
+    <Compile Include="Payments\VoidPaymentRequest.cs" />
+    <Compile Include="Payments\VoidPaymentResult.cs" />
+    <Compile Include="Polls\IPollService.cs" />
+    <Compile Include="Polls\PollService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Security\AclService.cs" />
+    <Compile Include="Security\EncryptionService.cs" />
+    <Compile Include="Security\IAclService.cs" />
+    <Compile Include="Security\IEncryptionService.cs" />
+    <Compile Include="Security\IPermissionProvider.cs" />
+    <Compile Include="Security\IPermissionService.cs" />
+    <Compile Include="Security\PermissionService.cs" />
+    <Compile Include="Security\StandardPermissionProvider.cs" />
+    <Compile Include="Seo\ISitemapGenerator.cs" />
+    <Compile Include="Seo\IUrlRecordService.cs" />
+    <Compile Include="Seo\SeoExtensions.cs" />
+    <Compile Include="Seo\SitemapGenerator.cs" />
+    <Compile Include="Seo\UpdateFrequency.cs" />
+    <Compile Include="Seo\UrlRecordService.cs" />
+    <Compile Include="Shipping\EventPublisherExtensions.cs" />
+    <Compile Include="Shipping\GetShippingOptionRequest.cs" />
+    <Compile Include="Shipping\GetShippingOptionResponse.cs" />
+    <Compile Include="Shipping\IShipmentService.cs" />
+    <Compile Include="Shipping\IShippingRateComputationMethod.cs" />
+    <Compile Include="Shipping\IShippingService.cs" />
+    <Compile Include="Shipping\ShipmentService.cs" />
+    <Compile Include="Shipping\ShippingExtensions.cs" />
+    <Compile Include="Shipping\ShippingRateComputationMethodType.cs" />
+    <Compile Include="Shipping\ShippingService.cs" />
+    <Compile Include="Shipping\Tracking\GeneralShipmentTracker.cs" />
+    <Compile Include="Shipping\Tracking\IShipmentTracker.cs" />
+    <Compile Include="Shipping\Tracking\ShipmentStatusEvent.cs" />
+    <Compile Include="Stores\IStoreMappingService.cs" />
+    <Compile Include="Stores\IStoreService.cs" />
+    <Compile Include="Stores\StoreMappingService.cs" />
+    <Compile Include="Stores\StoreService.cs" />
+    <Compile Include="Tasks\IScheduleTaskService.cs" />
+    <Compile Include="Tasks\ITask.cs" />
+    <Compile Include="Tasks\ScheduleTaskService.cs" />
+    <Compile Include="Tasks\Task.cs" />
+    <Compile Include="Tasks\TaskManager.cs" />
+    <Compile Include="Tasks\TaskThread.cs" />
+    <Compile Include="Tax\CalculateTaxRequest.cs" />
+    <Compile Include="Tax\CalculateTaxResult.cs" />
+    <Compile Include="Tax\ITaxCategoryService.cs" />
+    <Compile Include="Tax\ITaxProvider.cs" />
+    <Compile Include="Tax\ITaxService.cs" />
+    <Compile Include="Tax\TaxCategoryService.cs" />
+    <Compile Include="Tax\TaxService.cs" />
+    <Compile Include="Topics\ITopicService.cs" />
+    <Compile Include="Topics\ITopicTemplateService.cs" />
+    <Compile Include="Topics\TopicService.cs" />
+    <Compile Include="Topics\TopicTemplateService.cs" />
+    <Compile Include="Vendors\IVendorService.cs" />
+    <Compile Include="Vendors\VendorExtensions.cs" />
+    <Compile Include="Vendors\VendorService.cs" />
+    <Compile Include="Web References\EuropaCheckVatService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Jx.Services.csprojResolveAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\EuropaCheckVatService\checkVatService.wsdl" />
+    <None Include="Web References\EuropaCheckVatService\matchCode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EuropaCheckVatService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Jx.Services.dll" />
+    <Content Include="bin\Debug\Jx.Services.pdb" />
+    <Content Include="obj\Debug\Jx.Services.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Jx.Services.dll" />
+    <Content Include="obj\Debug\Jx.Services.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jx.Core\Jx.Core.csproj">
+      <Project>{853a371d-680e-45de-b3c2-28b243281e62}</Project>
+      <Name>Jx.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jx.Data\Jx.Data.csproj">
+      <Project>{a696122b-8eed-4225-9ba6-bc15382f32f0}</Project>
+      <Name>Jx.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EuropaCheckVatService\</RelPath>
+      <UpdateFromURL>http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Jx_Services_eu_europa_ec_checkVatService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
