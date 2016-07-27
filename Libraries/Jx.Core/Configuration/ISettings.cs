@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jx.Core
+namespace Jx.Core.Configuration
 {
-    public class Class1
+    /// <summary>
+    /// Setting interface
+    /// </summary>
+    public interface ISettings
     {
     }
 }
