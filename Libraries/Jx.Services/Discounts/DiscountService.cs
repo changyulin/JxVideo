@@ -30,7 +30,7 @@ namespace Jx.Services.Discounts
         /// <remarks>
         /// {0} : discont ID
         /// </remarks>
-        private const string DISCOUNTS_BY_ID_KEY = "Nop.discount.id-{0}";
+        private const string DISCOUNTS_BY_ID_KEY = "Jx.discount.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -39,11 +39,11 @@ namespace Jx.Services.Discounts
         /// {1} : coupon code
         /// {2} : discount name
         /// </remarks>
-        private const string DISCOUNTS_ALL_KEY = "Nop.discount.all-{0}-{1}-{2}";
+        private const string DISCOUNTS_ALL_KEY = "Jx.discount.all-{0}-{1}-{2}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string DISCOUNTS_PATTERN_KEY = "Nop.discount.";
+        private const string DISCOUNTS_PATTERN_KEY = "Jx.discount.";
 
         #endregion
 

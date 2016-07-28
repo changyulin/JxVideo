@@ -24,12 +24,12 @@ namespace Jx.Services.Catalog
         /// <remarks>
         /// {0} : store ID
         /// </remarks>
-        private const string PRODUCTTAG_COUNT_KEY = "Nop.producttag.count-{0}";
+        private const string PRODUCTTAG_COUNT_KEY = "Jx.producttag.count-{0}";
 
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string PRODUCTTAG_PATTERN_KEY = "Nop.producttag.";
+        private const string PRODUCTTAG_PATTERN_KEY = "Jx.producttag.";
 
         #endregion
 

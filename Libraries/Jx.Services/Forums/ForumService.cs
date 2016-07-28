@@ -23,22 +23,22 @@ namespace Jx.Services.Forums
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string FORUMGROUP_ALL_KEY = "Nop.forumgroup.all";
+        private const string FORUMGROUP_ALL_KEY = "Jx.forumgroup.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : forum group ID
         /// </remarks>
-        private const string FORUM_ALLBYFORUMGROUPID_KEY = "Nop.forum.allbyforumgroupid-{0}";
+        private const string FORUM_ALLBYFORUMGROUPID_KEY = "Jx.forum.allbyforumgroupid-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string FORUMGROUP_PATTERN_KEY = "Nop.forumgroup.";
+        private const string FORUMGROUP_PATTERN_KEY = "Jx.forumgroup.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string FORUM_PATTERN_KEY = "Nop.forum.";
+        private const string FORUM_PATTERN_KEY = "Jx.forum.";
 
         #endregion
 

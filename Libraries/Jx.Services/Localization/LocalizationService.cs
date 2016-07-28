@@ -29,7 +29,7 @@ namespace Jx.Services.Localization
         /// <remarks>
         /// {0} : language ID
         /// </remarks>
-        private const string LOCALSTRINGRESOURCES_ALL_KEY = "Nop.lsr.all-{0}";
+        private const string LOCALSTRINGRESOURCES_ALL_KEY = "Jx.lsr.all-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -37,11 +37,11 @@ namespace Jx.Services.Localization
         /// {0} : language ID
         /// {1} : resource key
         /// </remarks>
-        private const string LOCALSTRINGRESOURCES_BY_RESOURCENAME_KEY = "Nop.lsr.{0}-{1}";
+        private const string LOCALSTRINGRESOURCES_BY_RESOURCENAME_KEY = "Jx.lsr.{0}-{1}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string LOCALSTRINGRESOURCES_PATTERN_KEY = "Nop.lsr.";
+        private const string LOCALSTRINGRESOURCES_PATTERN_KEY = "Jx.lsr.";
 
         #endregion
 

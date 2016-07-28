@@ -18,18 +18,18 @@ namespace Jx.Services.Tax
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string TAXCATEGORIES_ALL_KEY = "Nop.taxcategory.all";
+        private const string TAXCATEGORIES_ALL_KEY = "Jx.taxcategory.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : tax category ID
         /// </remarks>
-        private const string TAXCATEGORIES_BY_ID_KEY = "Nop.taxcategory.id-{0}";
+        private const string TAXCATEGORIES_BY_ID_KEY = "Jx.taxcategory.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string TAXCATEGORIES_PATTERN_KEY = "Nop.taxcategory.";
+        private const string TAXCATEGORIES_PATTERN_KEY = "Jx.taxcategory.";
 
         #endregion
 

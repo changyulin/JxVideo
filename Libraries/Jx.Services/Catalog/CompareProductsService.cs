@@ -15,7 +15,7 @@ namespace Jx.Services.Catalog
         /// <summary>
         /// Compare products cookie name
         /// </summary>
-        private const string COMPARE_PRODUCTS_COOKIE_NAME = "nop.CompareProducts";
+        private const string COMPARE_PRODUCTS_COOKIE_NAME = "Jx.CompareProducts";
 
         #endregion
         

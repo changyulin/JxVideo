@@ -26,15 +26,15 @@ namespace Jx.Services.Localization
         /// {2} : locale key group
         /// {3} : locale key
         /// </remarks>
-        private const string LOCALIZEDPROPERTY_KEY = "Nop.localizedproperty.value-{0}-{1}-{2}-{3}";
+        private const string LOCALIZEDPROPERTY_KEY = "Jx.localizedproperty.value-{0}-{1}-{2}-{3}";
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string LOCALIZEDPROPERTY_ALL_KEY = "Nop.localizedproperty.all";
+        private const string LOCALIZEDPROPERTY_ALL_KEY = "Jx.localizedproperty.all";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string LOCALIZEDPROPERTY_PATTERN_KEY = "Nop.localizedproperty.";
+        private const string LOCALIZEDPROPERTY_PATTERN_KEY = "Jx.localizedproperty.";
 
         #endregion
 

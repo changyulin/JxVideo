@@ -59,8 +59,8 @@ namespace Jx.Services.Catalog.Cache
         /// {4} : roles of the current user
         /// {5} : current store ID
         /// </remarks>
-        public const string PRODUCT_PRICE_MODEL_KEY = "Nop.totals.productprice-{0}-{1}-{2}-{3}-{4}-{5}";
-        public const string PRODUCT_PRICE_PATTERN_KEY = "Nop.totals.productprice";
+        public const string PRODUCT_PRICE_MODEL_KEY = "Jx.totals.productprice-{0}-{1}-{2}-{3}-{4}-{5}";
+        public const string PRODUCT_PRICE_PATTERN_KEY = "Jx.totals.productprice";
 
         /// <summary>
         /// Key for category IDs of a discount
@@ -70,8 +70,8 @@ namespace Jx.Services.Catalog.Cache
         /// {1} : roles of the current user
         /// {2} : current store ID
         /// </remarks>
-        public const string DISCOUNT_CATEGORY_IDS_MODEL_KEY = "Nop.totals.discount.categoryids-{0}-{1}-{2}";
-        public const string DISCOUNT_CATEGORY_IDS_PATTERN_KEY = "Nop.totals.discount.categoryids";
+        public const string DISCOUNT_CATEGORY_IDS_MODEL_KEY = "Jx.totals.discount.categoryids-{0}-{1}-{2}";
+        public const string DISCOUNT_CATEGORY_IDS_PATTERN_KEY = "Jx.totals.discount.categoryids";
 
         /// <summary>
         /// Key for manufacturer IDs of a discount
@@ -81,8 +81,8 @@ namespace Jx.Services.Catalog.Cache
         /// {1} : roles of the current user
         /// {2} : current store ID
         /// </remarks>
-        public const string DISCOUNT_MANUFACTURER_IDS_MODEL_KEY = "Nop.totals.discount.manufacturerids-{0}-{1}-{2}";
-        public const string DISCOUNT_MANUFACTURER_IDS_PATTERN_KEY = "Nop.totals.discount.manufacturerids";
+        public const string DISCOUNT_MANUFACTURER_IDS_MODEL_KEY = "Jx.totals.discount.manufacturerids-{0}-{1}-{2}";
+        public const string DISCOUNT_MANUFACTURER_IDS_PATTERN_KEY = "Jx.totals.discount.manufacturerids";
 
         /// <summary>
         /// Key for category IDs of a product
@@ -92,8 +92,8 @@ namespace Jx.Services.Catalog.Cache
         /// {1} : roles of the current user
         /// {2} : current store ID
         /// </remarks>
-        public const string DISCOUNT_PRODUCT_CATEGORY_IDS_MODEL_KEY = "Nop.totals.product.categoryids-{0}-{1}-{2}";
-        public const string DISCOUNT_PRODUCT_CATEGORY_IDS_PATTERN_KEY = "Nop.totals.product.categoryids";
+        public const string DISCOUNT_PRODUCT_CATEGORY_IDS_MODEL_KEY = "Jx.totals.product.categoryids-{0}-{1}-{2}";
+        public const string DISCOUNT_PRODUCT_CATEGORY_IDS_PATTERN_KEY = "Jx.totals.product.categoryids";
 
         /// <summary>
         /// Key for manufacturer IDs of a product
@@ -103,8 +103,8 @@ namespace Jx.Services.Catalog.Cache
         /// {1} : roles of the current user
         /// {2} : current store ID
         /// </remarks>
-        public const string DISCOUNT_PRODUCT_MANUFACTURER_IDS_MODEL_KEY = "Nop.totals.product.manufacturerids-{0}-{1}-{2}";
-        public const string DISCOUNT_PRODUCT_MANUFACTURER_IDS_PATTERN_KEY = "Nop.totals.product.manufacturerids";
+        public const string DISCOUNT_PRODUCT_MANUFACTURER_IDS_MODEL_KEY = "Jx.totals.product.manufacturerids-{0}-{1}-{2}";
+        public const string DISCOUNT_PRODUCT_MANUFACTURER_IDS_PATTERN_KEY = "Jx.totals.product.manufacturerids";
 
         private readonly ICacheManager _cacheManager;
 

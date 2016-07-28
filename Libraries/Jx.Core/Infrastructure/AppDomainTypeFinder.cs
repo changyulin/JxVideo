@@ -203,7 +203,7 @@ namespace Jx.Core.Infrastructure
         /// The name of the assembly to check.
         /// </param>
         /// <returns>
-        /// True if the assembly should be loaded into Nop.
+        /// True if the assembly should be loaded into Jx.
         /// </returns>
         public virtual bool Matches(string assemblyFullName)
         {

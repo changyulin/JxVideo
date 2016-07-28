@@ -23,11 +23,11 @@ namespace Jx.Services.Common
         /// {0} : entity ID
         /// {1} : key group
         /// </remarks>
-        private const string GENERICATTRIBUTE_KEY = "Nop.genericattribute.{0}-{1}";
+        private const string GENERICATTRIBUTE_KEY = "Jx.genericattribute.{0}-{1}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string GENERICATTRIBUTE_PATTERN_KEY = "Nop.genericattribute.";
+        private const string GENERICATTRIBUTE_PATTERN_KEY = "Jx.genericattribute.";
         #endregion
 
         #region Fields

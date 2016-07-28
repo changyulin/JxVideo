@@ -181,6 +181,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\VideoModule.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -283,6 +284,10 @@
     <ProjectReference Include="..\..\Libraries\Jx.Services\Jx.Services.csproj">
       <Project>{5de56996-c56c-4b5d-92e0-009a3ef9877a}</Project>
       <Name>Jx.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jx.Web.Framework\Jx.Web.Framework.csproj">
+      <Project>{32e776f1-1669-43de-9669-2da8caa176f9}</Project>
+      <Name>Jx.Web.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

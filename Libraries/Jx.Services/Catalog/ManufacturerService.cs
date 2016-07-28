@@ -24,7 +24,7 @@ namespace Jx.Services.Catalog
         /// <remarks>
         /// {0} : manufacturer ID
         /// </remarks>
-        private const string MANUFACTURERS_BY_ID_KEY = "Nop.manufacturer.id-{0}";
+        private const string MANUFACTURERS_BY_ID_KEY = "Jx.manufacturer.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -36,7 +36,7 @@ namespace Jx.Services.Catalog
         /// {4} : current customer ID
         /// {5} : store ID
         /// </remarks>
-        private const string PRODUCTMANUFACTURERS_ALLBYMANUFACTURERID_KEY = "Nop.productmanufacturer.allbymanufacturerid-{0}-{1}-{2}-{3}-{4}-{5}";
+        private const string PRODUCTMANUFACTURERS_ALLBYMANUFACTURERID_KEY = "Jx.productmanufacturer.allbymanufacturerid-{0}-{1}-{2}-{3}-{4}-{5}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -46,15 +46,15 @@ namespace Jx.Services.Catalog
         /// {2} : current customer ID
         /// {3} : store ID
         /// </remarks>
-        private const string PRODUCTMANUFACTURERS_ALLBYPRODUCTID_KEY = "Nop.productmanufacturer.allbyproductid-{0}-{1}-{2}-{3}";
+        private const string PRODUCTMANUFACTURERS_ALLBYPRODUCTID_KEY = "Jx.productmanufacturer.allbyproductid-{0}-{1}-{2}-{3}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string MANUFACTURERS_PATTERN_KEY = "Nop.manufacturer.";
+        private const string MANUFACTURERS_PATTERN_KEY = "Jx.manufacturer.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string PRODUCTMANUFACTURERS_PATTERN_KEY = "Nop.productmanufacturer.";
+        private const string PRODUCTMANUFACTURERS_PATTERN_KEY = "Jx.productmanufacturer.";
 
         #endregion
 

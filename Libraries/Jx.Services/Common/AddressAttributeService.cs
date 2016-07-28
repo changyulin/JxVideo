@@ -18,36 +18,36 @@ namespace Jx.Services.Common
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string ADDRESSATTRIBUTES_ALL_KEY = "Nop.addressattribute.all";
+        private const string ADDRESSATTRIBUTES_ALL_KEY = "Jx.addressattribute.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : address attribute ID
         /// </remarks>
-        private const string ADDRESSATTRIBUTES_BY_ID_KEY = "Nop.addressattribute.id-{0}";
+        private const string ADDRESSATTRIBUTES_BY_ID_KEY = "Jx.addressattribute.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : address attribute ID
         /// </remarks>
-        private const string ADDRESSATTRIBUTEVALUES_ALL_KEY = "Nop.addressattributevalue.all-{0}";
+        private const string ADDRESSATTRIBUTEVALUES_ALL_KEY = "Jx.addressattributevalue.all-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : address attribute value ID
         /// </remarks>
-        private const string ADDRESSATTRIBUTEVALUES_BY_ID_KEY = "Nop.addressattributevalue.id-{0}";
+        private const string ADDRESSATTRIBUTEVALUES_BY_ID_KEY = "Jx.addressattributevalue.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string ADDRESSATTRIBUTES_PATTERN_KEY = "Nop.addressattribute.";
+        private const string ADDRESSATTRIBUTES_PATTERN_KEY = "Jx.addressattribute.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string ADDRESSATTRIBUTEVALUES_PATTERN_KEY = "Nop.addressattributevalue.";
+        private const string ADDRESSATTRIBUTEVALUES_PATTERN_KEY = "Jx.addressattributevalue.";
         #endregion
         
         #region Fields

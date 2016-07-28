@@ -24,11 +24,11 @@ namespace Jx.Services.Directory
         /// {1} : language ID
         /// {2} : show hidden records?
         /// </remarks>
-        private const string STATEPROVINCES_ALL_KEY = "Nop.stateprovince.all-{0}-{1}-{2}";
+        private const string STATEPROVINCES_ALL_KEY = "Jx.stateprovince.all-{0}-{1}-{2}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string STATEPROVINCES_PATTERN_KEY = "Nop.stateprovince.";
+        private const string STATEPROVINCES_PATTERN_KEY = "Jx.stateprovince.";
 
         #endregion
 

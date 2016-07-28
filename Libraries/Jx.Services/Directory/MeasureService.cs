@@ -19,33 +19,33 @@ namespace Jx.Services.Directory
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string MEASUREDIMENSIONS_ALL_KEY = "Nop.measuredimension.all";
+        private const string MEASUREDIMENSIONS_ALL_KEY = "Jx.measuredimension.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : dimension ID
         /// </remarks>
-        private const string MEASUREDIMENSIONS_BY_ID_KEY = "Nop.measuredimension.id-{0}";
+        private const string MEASUREDIMENSIONS_BY_ID_KEY = "Jx.measuredimension.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string MEASUREWEIGHTS_ALL_KEY = "Nop.measureweight.all";
+        private const string MEASUREWEIGHTS_ALL_KEY = "Jx.measureweight.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : weight ID
         /// </remarks>
-        private const string MEASUREWEIGHTS_BY_ID_KEY = "Nop.measureweight.id-{0}";
+        private const string MEASUREWEIGHTS_BY_ID_KEY = "Jx.measureweight.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string MEASUREDIMENSIONS_PATTERN_KEY = "Nop.measuredimension.";
+        private const string MEASUREDIMENSIONS_PATTERN_KEY = "Jx.measuredimension.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string MEASUREWEIGHTS_PATTERN_KEY = "Nop.measureweight.";
+        private const string MEASUREWEIGHTS_PATTERN_KEY = "Jx.measureweight.";
 
         #endregion
 

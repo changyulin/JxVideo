@@ -32,11 +32,11 @@ namespace Jx.Services.Shipping
         /// <remarks>
         /// {0} : warehouse ID
         /// </remarks>
-        private const string WAREHOUSES_BY_ID_KEY = "Nop.warehouse.id-{0}";
+        private const string WAREHOUSES_BY_ID_KEY = "Jx.warehouse.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string WAREHOUSES_PATTERN_KEY = "Nop.warehouse.";
+        private const string WAREHOUSES_PATTERN_KEY = "Jx.warehouse.";
 
         #endregion
 

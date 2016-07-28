@@ -23,18 +23,18 @@ namespace Jx.Services.Localization
         /// <remarks>
         /// {0} : language ID
         /// </remarks>
-        private const string LANGUAGES_BY_ID_KEY = "Nop.language.id-{0}";
+        private const string LANGUAGES_BY_ID_KEY = "Jx.language.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : show hidden records?
         /// </remarks>
-        private const string LANGUAGES_ALL_KEY = "Nop.language.all-{0}";
+        private const string LANGUAGES_ALL_KEY = "Jx.language.all-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string LANGUAGES_PATTERN_KEY = "Nop.language.";
+        private const string LANGUAGES_PATTERN_KEY = "Jx.language.";
 
         #endregion
 

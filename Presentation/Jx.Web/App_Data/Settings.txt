@@ -1,0 +1,2 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=SZPC2178\SQLEXPRESS;Initial Catalog=nop37;Integrated Security=True;Persist Security Info=False

@@ -24,11 +24,11 @@ namespace Jx.Services.Security
         /// {0} : customer role ID
         /// {1} : permission system name
         /// </remarks>
-        private const string PERMISSIONS_ALLOWED_KEY = "Nop.permission.allowed-{0}-{1}";
+        private const string PERMISSIONS_ALLOWED_KEY = "Jx.permission.allowed-{0}-{1}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string PERMISSIONS_PATTERN_KEY = "Nop.permission.";
+        private const string PERMISSIONS_PATTERN_KEY = "Jx.permission.";
         #endregion
 
         #region Fields

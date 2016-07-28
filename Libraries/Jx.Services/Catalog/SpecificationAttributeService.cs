@@ -24,11 +24,11 @@ namespace Jx.Services.Catalog
         /// {1} : allow filtering
         /// {2} : show on product page
         /// </remarks>
-        private const string PRODUCTSPECIFICATIONATTRIBUTE_ALLBYPRODUCTID_KEY = "Nop.productspecificationattribute.allbyproductid-{0}-{1}-{2}";
+        private const string PRODUCTSPECIFICATIONATTRIBUTE_ALLBYPRODUCTID_KEY = "Jx.productspecificationattribute.allbyproductid-{0}-{1}-{2}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string PRODUCTSPECIFICATIONATTRIBUTE_PATTERN_KEY = "Nop.productspecificationattribute.";
+        private const string PRODUCTSPECIFICATIONATTRIBUTE_PATTERN_KEY = "Jx.productspecificationattribute.";
         #endregion
 
         #region Fields

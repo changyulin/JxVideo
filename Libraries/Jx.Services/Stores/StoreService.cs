@@ -18,18 +18,18 @@ namespace Jx.Services.Stores
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string STORES_ALL_KEY = "Nop.stores.all";
+        private const string STORES_ALL_KEY = "Jx.stores.all";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : store ID
         /// </remarks>
-        private const string STORES_BY_ID_KEY = "Nop.stores.id-{0}";
+        private const string STORES_BY_ID_KEY = "Jx.stores.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string STORES_PATTERN_KEY = "Nop.stores.";
+        private const string STORES_PATTERN_KEY = "Jx.stores.";
 
         #endregion
         

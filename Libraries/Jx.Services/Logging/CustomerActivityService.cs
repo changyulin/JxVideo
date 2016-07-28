@@ -21,11 +21,11 @@ namespace Jx.Services.Logging
         /// <summary>
         /// Key for caching
         /// </summary>
-        private const string ACTIVITYTYPE_ALL_KEY = "Nop.activitytype.all";
+        private const string ACTIVITYTYPE_ALL_KEY = "Jx.activitytype.all";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string ACTIVITYTYPE_PATTERN_KEY = "Nop.activitytype.";
+        private const string ACTIVITYTYPE_PATTERN_KEY = "Jx.activitytype.";
 
         #endregion
 

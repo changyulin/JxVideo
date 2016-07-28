@@ -26,7 +26,7 @@ namespace Jx.Services.Catalog
         /// <remarks>
         /// {0} : category ID
         /// </remarks>
-        private const string CATEGORIES_BY_ID_KEY = "Nop.category.id-{0}";
+        private const string CATEGORIES_BY_ID_KEY = "Jx.category.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -37,7 +37,7 @@ namespace Jx.Services.Catalog
         /// {3} : store ID
         /// {3} : include all levels (child)
         /// </remarks>
-        private const string CATEGORIES_BY_PARENT_CATEGORY_ID_KEY = "Nop.category.byparent-{0}-{1}-{2}-{3}-{4}";
+        private const string CATEGORIES_BY_PARENT_CATEGORY_ID_KEY = "Jx.category.byparent-{0}-{1}-{2}-{3}-{4}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -49,7 +49,7 @@ namespace Jx.Services.Catalog
         /// {4} : current customer ID
         /// {5} : store ID
         /// </remarks>
-        private const string PRODUCTCATEGORIES_ALLBYCATEGORYID_KEY = "Nop.productcategory.allbycategoryid-{0}-{1}-{2}-{3}-{4}-{5}";
+        private const string PRODUCTCATEGORIES_ALLBYCATEGORYID_KEY = "Jx.productcategory.allbycategoryid-{0}-{1}-{2}-{3}-{4}-{5}";
         /// <summary>
         /// Key for caching
         /// </summary>
@@ -59,15 +59,15 @@ namespace Jx.Services.Catalog
         /// {2} : current customer ID
         /// {3} : store ID
         /// </remarks>
-        private const string PRODUCTCATEGORIES_ALLBYPRODUCTID_KEY = "Nop.productcategory.allbyproductid-{0}-{1}-{2}-{3}";
+        private const string PRODUCTCATEGORIES_ALLBYPRODUCTID_KEY = "Jx.productcategory.allbyproductid-{0}-{1}-{2}-{3}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string CATEGORIES_PATTERN_KEY = "Nop.category.";
+        private const string CATEGORIES_PATTERN_KEY = "Jx.category.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string PRODUCTCATEGORIES_PATTERN_KEY = "Nop.productcategory.";
+        private const string PRODUCTCATEGORIES_PATTERN_KEY = "Jx.productcategory.";
 
         #endregion
 

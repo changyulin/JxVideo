@@ -1,4 +1,8 @@
-﻿using Jx.Web.Core;
+﻿using Jx.Core;
+using Jx.Core.Domain.Customers;
+using Jx.Core.Domain.Security;
+using Jx.Services.Security;
+using Jx.Web.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,16 +14,30 @@ namespace Jx.Web.Controllers
 {
     public class VideoController : Controller
     {
-        //public ActionResult GetVideo(String category, String name)
-        //{
-        //    if (name.IndexOf(".") == -1)
-        //        name += ".mp4";
-        //    var path = Server.MapPath("~/Content/Video/" + category + "/" + name);
-        //    return File(path, "video/mp4", Url.Encode(name));
-        //}
+        private readonly IWorkContext _workContext;
+        private readonly IPermissionService _permissionService;
+
+        public VideoController(IWorkContext workContext, IPermissionService permissionService)
+        {
+            this._workContext = workContext;
+            this._permissionService = permissionService;
+        }
 
         public ActionResult VideoPage(string name)
         {
+            PermissionRecord pr = this._permissionService.GetPermissionRecordBySystemName(name);
+            if (pr != null)
+            {
+                Customer customer = _workContext.CurrentCustomer;
+                if (customer.IsGuest())
+                {
+                    return Redirect("http://localhost/login?returnUrl=http://localhost:8080/Video/name");
+                }
+                else if (!this._permissionService.Authorize(pr))
+                {
+                    return View("OnlineFull");
+                }
+            }
             //System.Web.HttpContext.Current.Request.ip
             string token = Guid.NewGuid().ToString();
             string browser = Request.Browser.Browser.ToLower().Trim();

@@ -23,36 +23,36 @@ namespace Jx.Services.Orders
         /// {0} : store ID
         /// {1} : >A value indicating whether we should exlude shippable attributes
         /// </remarks>
-        private const string CHECKOUTATTRIBUTES_ALL_KEY = "Nop.checkoutattribute.all-{0}-{1}";
+        private const string CHECKOUTATTRIBUTES_ALL_KEY = "Jx.checkoutattribute.all-{0}-{1}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : checkout attribute ID
         /// </remarks>
-        private const string CHECKOUTATTRIBUTES_BY_ID_KEY = "Nop.checkoutattribute.id-{0}";
+        private const string CHECKOUTATTRIBUTES_BY_ID_KEY = "Jx.checkoutattribute.id-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : checkout attribute ID
         /// </remarks>
-        private const string CHECKOUTATTRIBUTEVALUES_ALL_KEY = "Nop.checkoutattributevalue.all-{0}";
+        private const string CHECKOUTATTRIBUTEVALUES_ALL_KEY = "Jx.checkoutattributevalue.all-{0}";
         /// <summary>
         /// Key for caching
         /// </summary>
         /// <remarks>
         /// {0} : checkout attribute value ID
         /// </remarks>
-        private const string CHECKOUTATTRIBUTEVALUES_BY_ID_KEY = "Nop.checkoutattributevalue.id-{0}";
+        private const string CHECKOUTATTRIBUTEVALUES_BY_ID_KEY = "Jx.checkoutattributevalue.id-{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string CHECKOUTATTRIBUTES_PATTERN_KEY = "Nop.checkoutattribute.";
+        private const string CHECKOUTATTRIBUTES_PATTERN_KEY = "Jx.checkoutattribute.";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
-        private const string CHECKOUTATTRIBUTEVALUES_PATTERN_KEY = "Nop.checkoutattributevalue.";
+        private const string CHECKOUTATTRIBUTEVALUES_PATTERN_KEY = "Jx.checkoutattributevalue.";
         #endregion
         
         #region Fields
