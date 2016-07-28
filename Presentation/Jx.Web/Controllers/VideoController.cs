@@ -3,6 +3,7 @@ using Jx.Core.Domain.Customers;
 using Jx.Core.Domain.Security;
 using Jx.Services.Security;
 using Jx.Web.Core;
+using Jx.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,16 +15,21 @@ namespace Jx.Web.Controllers
 {
     public class VideoController : Controller
     {
+        private readonly HttpContextBase _httpContext;
         private readonly IWorkContext _workContext;
         private readonly IPermissionService _permissionService;
 
-        public VideoController(IWorkContext workContext, IPermissionService permissionService)
+
+        public VideoController(HttpContextBase httpContext,
+            IWorkContext workContext,
+            IPermissionService permissionService)
         {
+            this._httpContext = httpContext;
             this._workContext = workContext;
             this._permissionService = permissionService;
         }
 
-        public ActionResult VideoPage(string name)
+        public ActionResult VideoPage(string name, string inIframe)
         {
             PermissionRecord pr = this._permissionService.GetPermissionRecordBySystemName(name);
             if (pr != null)
@@ -31,11 +37,23 @@ namespace Jx.Web.Controllers
                 Customer customer = _workContext.CurrentCustomer;
                 if (customer.IsGuest())
                 {
-                    return Redirect("http://localhost/login?returnUrl=http://localhost:8080/Video/name");
+                    if (inIframe == "1")
+                    {
+                        MessageViewModel messageViewModel = new MessageViewModel();
+                        messageViewModel.Message = "观看此视频需要先登录！";
+                        return View("MessagePage", messageViewModel);
+                    }
+                    else
+                    {
+                        //this._httpContext.Request.Url.Host
+                        return Redirect("http://localhost/login?returnUrl=http://localhost:8080/Video/name");
+                    }
                 }
                 else if (!this._permissionService.Authorize(pr))
                 {
-                    return View("OnlineFull");
+                    MessageViewModel messageViewModel = new MessageViewModel();
+                    messageViewModel.Message = "您的账号信息中没有填写剑学编码，所以您没有权限观看此视频！";
+                    return View("MessagePage", messageViewModel);
                 }
             }
             //System.Web.HttpContext.Current.Request.ip
@@ -45,7 +63,9 @@ namespace Jx.Web.Controllers
             VideoClientsManage.addClient(token, browser, ip);
             if (VideoClientsManage.isClientFull())
             {
-                return View("OnlineFull");
+                MessageViewModel messageViewModel = new MessageViewModel();
+                messageViewModel.Message = "观看的人太多了！排队中...";
+                return View("MessagePage", messageViewModel);
             }
             else
             {
@@ -55,7 +75,7 @@ namespace Jx.Web.Controllers
             }
         }
 
-        public ActionResult OnlineFull()
+        public ActionResult MessagePage()
         {
             return View();
         }

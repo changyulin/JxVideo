@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Jx.Web.Models.MessageViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +8,6 @@
     <title>剑学在线视频</title>
 </head>
 <body>
-    <div style="width: 100%; margin: 100px auto 0 auto; text-align: center; ">观看的人太多了！排队中...</div>
+    <div style="width: 100%; margin: 100px auto 0 auto; text-align: center; ">@Model.Message</div>
 </body>
 </html>
