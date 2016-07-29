@@ -45,8 +45,11 @@ namespace Jx.Web.Controllers
                     }
                     else
                     {
-                        //this._httpContext.Request.Url.Host
-                        return Redirect("http://localhost/login?returnUrl=http://localhost:8080/Video/name");
+                        string host = this._httpContext.Request.Url.Host;
+                        if (!host.StartsWith("http"))
+                            host = "http://" + host;
+                        int port = this._httpContext.Request.Url.Port;
+                        return Redirect(host + "/login?returnUrl=" + host + ":" + port + "/Video/" + name);
                     }
                 }
                 else if (!this._permissionService.Authorize(pr))
