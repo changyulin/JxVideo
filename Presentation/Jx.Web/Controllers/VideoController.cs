@@ -29,7 +29,7 @@ namespace Jx.Web.Controllers
             this._permissionService = permissionService;
         }
 
-        public ActionResult VideoPage(string name, string inIframe)
+        public ActionResult VideoPage(string name, string inIframe, string width, string height)
         {
             PermissionRecord pr = this._permissionService.GetPermissionRecordBySystemName(name);
             if (pr != null)
@@ -74,6 +74,12 @@ namespace Jx.Web.Controllers
             {
                 this.ViewData["token"] = token;
                 this.ViewData["name"] = name.Replace("_", "/");
+                int videoWidth = 0;
+                int.TryParse(width, out videoWidth);
+                int videoHeight = 0;
+                int.TryParse(height, out videoHeight);
+                this.ViewData["width"] = videoWidth;
+                this.ViewData["height"] = videoHeight;
                 return View();
             }
         }

@@ -20,6 +20,8 @@ namespace Jx.Core.Domain.Customers
 
         public string StudNo { get; set; }
 
+        public bool IsUsed { get; set; }
+
         public bool IsValid { get; set; }
 
         public virtual ICollection<Customer> Students

@@ -11,18 +11,33 @@
     @Scripts.Render("~/Scripts/VideoClient.js")
 </head>
 <body>
-
-    @{ var token = @ViewData["token"].ToString();}
-    <input id="token" type="hidden" value=@token>
-    <!-- the player -->
     @{
+        int width = int.Parse(ViewData["width"].ToString());
+        if (width == 0)
+        {
+            width = 1200;
+        }
+        int height = int.Parse(ViewData["height"].ToString());
+        if (height == 0)
+        {
+            height = 742;
+        }
+        string widthStr = width + "px";
+        string heightStr = height + "px";
+        string ratio = string.Format("{0}", ((double)height / (double)width));
+        var token = ViewData["token"].ToString();
         string vedioSrc = "";
         if (ViewData["name"] != null) { vedioSrc = "/Video/" + ViewData["name"] + ".mp4?token=" + ViewData["token"]; }
+        
     }
-    <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="0.618">
-        <video>
-            <source type="video/mp4" src=@vedioSrc>
-        </video>
+    <input id="token" type="hidden" value="@token">
+    <!-- the player -->
+    <div style="display: block; width: @widthStr; height: @heightStr;">
+        <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="@ratio">
+            <video>
+                <source type="video/mp4" src="@vedioSrc">
+            </video>
+        </div>
     </div>
 </body>
 
