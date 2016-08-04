@@ -40,7 +40,7 @@ namespace Jx.Web.Modules
         {
             string url = HttpContext.Current.Request.Url.ToString();
             if (url.IndexOf(".mp4") > -1 &&
-                !PublicVideoList.Contains(url))
+                !existInPublicVideoList(url))
             {
                 string token = HttpContext.Current.Request.Params["token"];
                 string browser = HttpContext.Current.Request.Browser.Browser.ToLower().Trim();
@@ -51,7 +51,7 @@ namespace Jx.Web.Modules
                     {
                         if (string.IsNullOrEmpty(range) && !VideoClientsManage.isValidForFirstRequest(token))
                         {
-                            HttpContext.Current.RewritePath("~/OnlineFull");
+                            HttpContext.Current.RewritePath("~/MessagePage");
                             return;
                         }
                         VideoClientsManage.addVideoRequest(token, range);
@@ -60,7 +60,7 @@ namespace Jx.Web.Modules
                     {
                         if (string.IsNullOrEmpty(range) || (range.StartsWith("bytes=0-") && !VideoClientsManage.isValidForFirstRequest(token)))
                         {
-                            HttpContext.Current.RewritePath("~/OnlineFull");
+                            HttpContext.Current.RewritePath("~/MessagePage");
                             return;
                         }
                         VideoClientsManage.addVideoRequest(token, range);
@@ -68,24 +68,34 @@ namespace Jx.Web.Modules
                 }
                 else
                 {
-                    HttpContext.Current.RewritePath("~/OnlineFull");
+                    HttpContext.Current.RewritePath("~/MessagePage");
                 }
             }
         }
 
-        private static List<string> publicVideoList = null;
+        private static string[] publicVideoList = null;
 
-        private static List<string> PublicVideoList
+        private static string[] PublicVideoList
         {
             get
             {
                 if (publicVideoList == null)
                 {
-                    publicVideoList = new List<string>();
-                    publicVideoList.Add("1234.mp4");
+                    publicVideoList = new string[] { "1234.mp4" };
                 }
                 return publicVideoList;
             }
+        }
+        private static bool existInPublicVideoList(string value)
+        {
+            for (int i = 0; i < PublicVideoList.Length; i++)
+            {
+                if (value.IndexOf(PublicVideoList[i]) > -1)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         #endregion
 

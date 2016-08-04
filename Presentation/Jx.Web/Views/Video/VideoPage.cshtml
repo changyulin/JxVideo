@@ -12,6 +12,13 @@
 </head>
 <body>
     @{
+        string style = ViewData["style"] == null ? "1" : ViewData["style"].ToString();
+        string backgroudImageName = ViewData["backgroudImageName"] == null ? "" : ViewData["backgroudImageName"].ToString();
+        string poster = "";
+        if (!string.IsNullOrWhiteSpace(backgroudImageName))
+        {
+            poster = "/Video/" + backgroudImageName;
+        }
         int width = int.Parse(ViewData["width"].ToString());
         if (width == 0)
         {
@@ -28,17 +35,41 @@
         var token = ViewData["token"].ToString();
         string vedioSrc = "";
         if (ViewData["name"] != null) { vedioSrc = "/Video/" + ViewData["name"] + ".mp4?token=" + ViewData["token"]; }
-        
+
     }
     <input id="token" type="hidden" value="@token">
     <!-- the player -->
-    <div style="display: block; width: @widthStr; height: @heightStr;">
-        <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="@ratio">
-            <video>
+    @{
+        if (style == "1")
+        {
+            <div style="display: block; width: @widthStr; height: @heightStr;">
+                <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="@ratio">
+                    <video controls poster="@poster">
+                        <source type="video/mp4" src="@vedioSrc">
+                    </video>
+                </div>
+            </div>
+        }
+        else if (style == "2")
+        {
+            <video controls width="@width" height="@height" poster="@poster">
                 <source type="video/mp4" src="@vedioSrc">
             </video>
-        </div>
-    </div>
+        }
+}
+
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>

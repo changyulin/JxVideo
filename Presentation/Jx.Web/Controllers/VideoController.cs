@@ -29,7 +29,7 @@ namespace Jx.Web.Controllers
             this._permissionService = permissionService;
         }
 
-        public ActionResult VideoPage(string name, string inIframe, string width, string height)
+        public ActionResult VideoPage(string name, string inIframe, string style, string backgroudImageName, string width, string height)
         {
             PermissionRecord pr = this._permissionService.GetPermissionRecordBySystemName(name);
             if (pr != null)
@@ -74,6 +74,8 @@ namespace Jx.Web.Controllers
             {
                 this.ViewData["token"] = token;
                 this.ViewData["name"] = name.Replace("_", "/");
+                this.ViewData["style"] = style;
+                this.ViewData["backgroudImageName"] = backgroudImageName;
                 int videoWidth = 0;
                 int.TryParse(width, out videoWidth);
                 int videoHeight = 0;
