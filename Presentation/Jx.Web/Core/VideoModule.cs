@@ -1,5 +1,6 @@
 ﻿using Jx.Web.Core;
 using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace Jx.Web.Modules
@@ -37,7 +38,9 @@ namespace Jx.Web.Modules
 
         void context_BeginRequest(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Request.Url.ToString().IndexOf(".mp4") > -1)
+            string url = HttpContext.Current.Request.Url.ToString();
+            if (url.IndexOf(".mp4") > -1 &&
+                !PublicVideoList.Contains(url))
             {
                 string token = HttpContext.Current.Request.Params["token"];
                 string browser = HttpContext.Current.Request.Browser.Browser.ToLower().Trim();
@@ -70,6 +73,20 @@ namespace Jx.Web.Modules
             }
         }
 
+        private static List<string> publicVideoList = null;
+
+        private static List<string> PublicVideoList
+        {
+            get
+            {
+                if (publicVideoList == null)
+                {
+                    publicVideoList = new List<string>();
+                    publicVideoList.Add("1234.mp4");
+                }
+                return publicVideoList;
+            }
+        }
         #endregion
 
     }
