@@ -39,24 +39,41 @@
     }
     <input id="token" type="hidden" value="@token">
     <!-- the player -->
-    @{
-        if (style == "1")
-        {
-            <div style="display: block; width: @widthStr; height: @heightStr;">
-                <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="@ratio">
-                    <video controls poster="@poster">
+    @if (style == "1")
+    {
+        <div style="display: block; width: @widthStr; height: @heightStr;">
+            <div class="flowplayer" data-swf="Content/flowplayer/flowplayer.swf" data-ratio="@ratio">
+                @if (string.IsNullOrWhiteSpace(poster))
+                {
+                    <video>
                         <source type="video/mp4" src="@vedioSrc">
                     </video>
-                </div>
+                }
+                else
+                {
+                    <video poster="@poster">
+                        <source type="video/mp4" src="@vedioSrc">
+                    </video>
+                }
             </div>
-        }
-        else if (style == "2")
+        </div>
+    }
+    else if (style == "2")
+    {
+        if (string.IsNullOrWhiteSpace(poster))
         {
-            <video controls width="@width" height="@height" poster="@poster">
+            <video controls width="@width" height="@height" style="background-color:#000000">
                 <source type="video/mp4" src="@vedioSrc">
             </video>
         }
-}
+        else
+        {
+            <video controls width="@width" height="@height" poster="@poster" style="background-color:#000000">
+                <source type="video/mp4" src="@vedioSrc">
+            </video>
+        }
+    }
+    
 
 </body>
 
