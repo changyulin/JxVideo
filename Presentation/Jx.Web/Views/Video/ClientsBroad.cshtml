@@ -1,13 +1,72 @@
-﻿<!DOCTYPE html>
+﻿@using Jx.Web.Core;
+<!DOCTYPE html>
 <html>
 <head>
     <title>在线用户信息</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-left: 1px solid #888;
+            border-top: 1px solid #888;
+        }
+
+        th, td {
+            border-right: 1px solid #888;
+            border-bottom: 1px solid #888;
+            padding: 5px 15px;
+        }
+
+        th {
+            font-weight: bold;
+            background: #ccc;
+        }
+    </style>
 </head>
 <body>
     <div>进入播放页面的客户数量：@ViewData["TotalNumber"]</div>
     <div>没有加载视频的客户数量：@ViewData["NoLoadingNumber"]</div>
     <div>正在加载视频的客户数量：@ViewData["LoadingNumber"]</div>
     <div>已经完成加载的客户数量：@ViewData["CompletedLoadNumber"]</div>
+    <div>未完成就离开的客户数量：@ViewData["LeaveNumber"]</div>
+    <br />
+    <div>客户记录：</div>
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>最后活动时间</th>
+                <th>IP</th>
+                <th>开始播放</th>
+                <th>完成加载</th>
+                <th>未完离开</th>
+                <th>token</th>
+                <th>浏览器</th>
+                <th>RC</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                List<VideoClient> clients = (List<VideoClient>)ViewBag.Clients;
+                clients.Sort((m, n) => m.UpdateTime.CompareTo(n.UpdateTime));
+                for (int i = clients.Count() - 1; i >= 0; i--)
+                {
+                    VideoClient client = clients[i];
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@client.UpdateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>@client.Ip</td>
+                        <td>@(client.BeginLoad ? "是" : "")</td>
+                        <td>@(client.CompleteLoad ? "是" : "")</td>
+                        <td>@(client.Leave ? "是" : "")</td>
+                        <td>@client.Token</td>
+                        <td>@client.Browser</td>
+                        <td>@client.VideoRequest.Count()</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 </body>
 
 </html>

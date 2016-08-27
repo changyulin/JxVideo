@@ -10,6 +10,7 @@ namespace Jx.Web.Core
         private string token;
         private bool beginLoad = false;
         private bool completeLoad = false;
+        private bool leave = false;
         private DateTime updateTime = DateTime.Now;
         private List<string> videoRequest = new List<string>();
         private int validTimeSeconds = 5 * 60;
@@ -32,6 +33,12 @@ namespace Jx.Web.Core
         {
             get { return completeLoad; }
             set { completeLoad = value; }
+        }
+
+        public bool Leave
+        {
+            get { return leave; }
+            set { leave = value; }
         }
 
         public DateTime UpdateTime
@@ -58,15 +65,15 @@ namespace Jx.Web.Core
 
         public bool isActive()
         {
-            if (beginLoad)
+            if (beginLoad && !completeLoad)
             {
                 TimeSpan timeSpan = DateTime.Now - this.updateTime;
-                if (timeSpan.Seconds > validTimeSeconds)
+                if (timeSpan.TotalSeconds > validTimeSeconds)
                 {
-                    completeLoad = true;
+                    leave = true;
                 }
             }
-            return beginLoad && !completeLoad;
+            return beginLoad && !leave && !completeLoad;
         }
 
         public bool isValidForFirstRequest()

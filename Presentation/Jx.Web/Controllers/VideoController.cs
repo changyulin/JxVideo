@@ -109,10 +109,12 @@ namespace Jx.Web.Controllers
         {
             if (p == "jx2016")
             {
+                this.ViewData["LoadingNumber"] = VideoClientsManage.getActiveCount();
                 this.ViewData["TotalNumber"] = VideoClientsManage.getTotalCount();
                 this.ViewData["NoLoadingNumber"] = VideoClientsManage.getNoLoadingCount();
-                this.ViewData["LoadingNumber"] = VideoClientsManage.getActiveCount();
                 this.ViewData["CompletedLoadNumber"] = VideoClientsManage.getCompletedLoadCount();
+                this.ViewData["LeaveNumber"] = VideoClientsManage.getLeaveCount();
+                this.ViewBag.Clients = VideoClientsManage.clients.Values.ToList();;
                 return View();
             }
             else

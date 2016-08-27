@@ -8,8 +8,8 @@ namespace Jx.Web.Core
     public class VideoClientsManage
     {
         private static object obj = new object();
-        private static Dictionary<string, VideoClient> clients = new Dictionary<string, VideoClient>();
         private static int limitCount = 20;
+        public static Dictionary<string, VideoClient> clients = new Dictionary<string, VideoClient>();
 
         static VideoClientsManage()
         {
@@ -71,6 +71,11 @@ namespace Jx.Web.Core
             return clients.Values.Where(c => c.CompleteLoad == true).Count();
         }
 
+        public static int getLeaveCount()
+        {
+            return clients.Values.Where(c => c.Leave).Count();
+        }
+
         public static void notifyLoading(string token, string browser)
         {
             lock (obj)
@@ -88,6 +93,7 @@ namespace Jx.Web.Core
             {
                 if (exist(token, browser))
                 {
+                    clients[token].BeginLoad = true;
                     clients[token].CompleteLoad = true;
                 }
             }
