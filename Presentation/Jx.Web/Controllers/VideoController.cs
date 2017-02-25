@@ -46,16 +46,17 @@ namespace Jx.Web.Controllers
                     else
                     {
                         string host = this._httpContext.Request.Url.Host;
+                        string applicationPath = this._httpContext.Request.ApplicationPath;
                         if (!host.StartsWith("http"))
                             host = "http://" + host;
                         int port = this._httpContext.Request.Url.Port;
-                        return Redirect(host + "/login?returnUrl=" + host + ":" + port + "/Video/" + name);
+                        return Redirect(host + "/login?returnUrl=" + host + ":" + port + applicationPath + "/Video/" + name);
                     }
                 }
                 else if (!this._permissionService.Authorize(pr))
                 {
                     MessageViewModel messageViewModel = new MessageViewModel();
-                    messageViewModel.Message = "您的账号信息中没有填写剑学编码，所以您没有权限观看此视频！";
+                    messageViewModel.Message = "您的账号信息中没有填写剑学编码，所以您没有权限观看此视频！如有需要请联系客服.";
                     return View("MessagePage", messageViewModel);
                 }
             }
@@ -114,7 +115,7 @@ namespace Jx.Web.Controllers
                 this.ViewData["NoLoadingNumber"] = VideoClientsManage.getNoLoadingCount();
                 this.ViewData["CompletedLoadNumber"] = VideoClientsManage.getCompletedLoadCount();
                 this.ViewData["LeaveNumber"] = VideoClientsManage.getLeaveCount();
-                this.ViewBag.Clients = VideoClientsManage.clients.Values.ToList();;
+                this.ViewBag.Clients = VideoClientsManage.clients.Values.ToList();
                 return View();
             }
             else

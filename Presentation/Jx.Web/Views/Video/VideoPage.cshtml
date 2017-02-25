@@ -12,12 +12,13 @@
 </head>
 <body>
     @{
+        String urlPath = HttpContext.Current.Request.ApplicationPath + "/Video/";
         string style = ViewData["style"] == null ? "1" : ViewData["style"].ToString();
         string backgroudImageName = ViewData["backgroudImageName"] == null ? "" : ViewData["backgroudImageName"].ToString();
         string poster = "";
         if (!string.IsNullOrWhiteSpace(backgroudImageName))
         {
-            poster = "/Video/" + backgroudImageName;
+            poster = urlPath + backgroudImageName;
         }
         int width = int.Parse(ViewData["width"].ToString());
         if (width == 0)
@@ -34,7 +35,7 @@
         string ratio = string.Format("{0}", ((double)height / (double)width));
         var token = ViewData["token"].ToString();
         string vedioSrc = "";
-        if (ViewData["name"] != null) { vedioSrc = "/Video/" + ViewData["name"] + ".mp4?token=" + ViewData["token"]; }
+        if (ViewData["name"] != null) { vedioSrc = urlPath + ViewData["name"] + ".mp4?token=" + ViewData["token"]; }
 
     }
     <input id="token" type="hidden" value="@token">
@@ -73,20 +74,7 @@
             </video>
         }
     }
-    
+
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
